@@ -22,4 +22,11 @@ public class Cart {
     public void remove(Product product) {
         list.remove(product);
     }
+    public void removeAll() {
+        list.removeAll(list);
+    }
+
+    public List<Product> getList(){
+        return list;
+    }
 }

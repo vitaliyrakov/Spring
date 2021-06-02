@@ -1,12 +1,9 @@
 package ru.gb.demo;
 
-import org.springframework.stereotype.Component;
-
-//@Component
 public class Product {
-    private int id;
-    private String title;
-    private double cost;
+    private final int id;
+    private final String title;
+    private final double cost;
 
     public Product(int id, String title, double cost) {
         this.id = id;
