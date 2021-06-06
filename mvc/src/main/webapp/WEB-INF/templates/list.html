@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Товары в репозитории</title>
+</head>
+
+<body>
+<h2>Товары в репозитории</h2>
+<table>
+    <thead>
+    <tr>
+        <th> Название</th>
+        <th> Цена</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:if="${products.isEmpty()}">
+        <td colspan="2"> Репозиторий товаров пуст</td>
+    </tr>
+    <tr th:each="product : ${products}">
+        <td><a th:href="@{/products/{id}(id = ${product.getId()})}" th:text="${product.getName()}">product</a></td>
+        <td><span th:text="${product.getCost()}"> cost </span></td>
+    </tr>
+    </tbody>
+</table>
+
+<div>
+    <a th:href="@{/products/new}">Добавить в список</a>
+</div>
+
+</body>
+</html>
